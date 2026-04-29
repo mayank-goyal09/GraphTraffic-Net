@@ -1,0 +1,10 @@
+# PyTorch checkpoints
+*.pth
+
+# Python cache
+__pycache__/
+*.pyc
+
+# User testing outputs
+prediction_plot.png
+final_dashboard.png
