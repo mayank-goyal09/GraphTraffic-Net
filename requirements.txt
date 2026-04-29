@@ -1,0 +1,13 @@
+torch
+torch_geometric
+numpy
+pandas
+h5py
+scipy
+requests
+fastapi
+pydantic
+uvicorn
+streamlit
+plotly
+matplotlib
