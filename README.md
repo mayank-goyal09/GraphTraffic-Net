@@ -201,21 +201,22 @@ For the full experience, open three terminals and run:
 
 ## 🎨 **DASHBOARD EXPERIENCE**
 
-### ✨ **Premium UI with Glassmorphism Design**
 
-I have built a state-of-the-art dashboard that provides:
--   **Live Metric Cards**: Current speed vs. predicted trend.
--   **Nexus Visualization**: High-fidelity Plotly charts showing historical patterns and the future trajectory.
--   **Sensor Select**: Monitor any of the 207 sensors in real-time.
--   **Smart Simulation**: Automatically falls back to a realistic simulation mode if the backend is offline.
+### 📸 **Visual Insights**
 
-```
-✨ Dark mode with vibrant gradients
-✨ Glassmorphism card effects  
-✨ Smooth splined animations
-✨ Interactive spatio-temporal data
-✨ Responsive modern layout
-```
+<div align="center">
+
+#### **Real-Time Nexus Dashboard**
+![Dashboard Preview](final_dashboard.png)
+*The premium Streamlit interface showing live sensor metrics and spatio-temporal forecasts with a modern glassmorphism design.*
+
+<br/>
+
+#### **Model Prediction Accuracy**
+![Prediction Analysis](prediction_plot.png)
+*A comparative analysis between actual historical data and the ST-GCN model's 30-minute forecasting results.*
+
+</div>
 
 ---
 

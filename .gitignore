@@ -5,6 +5,6 @@
 __pycache__/
 *.pyc
 
+
 # User testing outputs
-prediction_plot.png
-final_dashboard.png
+# Removed from ignore to include in README
