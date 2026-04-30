@@ -199,6 +199,18 @@ For the full experience, open three terminals and run:
 
 ---
 
+## 🤗 **HUGGING FACE DEPLOYMENT**
+
+This project is optimized for **Hugging Face Spaces**. We provide a self-contained version of the dashboard (`hf_app.py`) that runs inference directly within the Streamlit process.
+
+1.  **Create a New Space**: Choose **Streamlit** as the SDK.
+2.  **Upload Files**: Upload the repository content.
+3.  **Config**: Ensure `hf_app.py` is renamed to `app.py` in the Space, or set the Space's "Main File" to `hf_app.py`.
+4.  **Large Files**: Use Git LFS for the `models/traffic_model.pth` file.
+
+---
+
+
 ## 🎨 **DASHBOARD EXPERIENCE**
 
 
