@@ -1,5 +1,5 @@
-# PyTorch checkpoints
-*.pth
+# PyTorch checkpoints handled by LFS
+# *.pth removed from ignore
 
 # Python cache
 __pycache__/
