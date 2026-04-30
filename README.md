@@ -199,14 +199,14 @@ For the full experience, open three terminals and run:
 
 ---
 
-## 🤗 **HUGGING FACE DEPLOYMENT**
+## 🤗 **HUGGING FACE DEPLOYMENT (DOCKER)**
 
-This project is optimized for **Hugging Face Spaces**. We provide a self-contained version of the dashboard (`hf_app.py`) that runs inference directly within the Streamlit process.
+To run the **full active pipeline** (Backend + Producer + Dashboard) on Hugging Face, we use the **Docker SDK**.
 
-1.  **Create a New Space**: Choose **Streamlit** as the SDK.
-2.  **Upload Files**: Upload the repository content.
-3.  **Config**: Ensure `hf_app.py` is renamed to `app.py` in the Space, or set the Space's "Main File" to `hf_app.py`.
-4.  **Large Files**: Use Git LFS for the `models/traffic_model.pth` file.
+1.  **Create a New Space**: Choose **Docker** as the SDK.
+2.  **Upload Files**: Upload the entire repository, including `Dockerfile` and `start.sh`.
+3.  **Large Files**: Ensure `models/traffic_model.pth` is handled via Git LFS.
+4.  **Automatic Launch**: The `Dockerfile` will automatically trigger `start.sh`, which launches the FastAPI backend and the data stream for a truly live experience.
 
 ---
 
