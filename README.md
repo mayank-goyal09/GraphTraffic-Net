@@ -2,7 +2,7 @@
 
 # 🚦 Nexus AI — Real-Time Traffic GNN Forecaster
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Outfit&weight=700&size=32&duration=3500&pause=1000&color=FF6B6B&center=true&vCenter=true&multiline=true&width=900&height=100&lines=Deep+Learning+Traffic+Predictions+🚦;60-Min+History+→+30-Min+Forecast;ST-GCN+Neural+Network+%7C+207+Sensor+Nodes)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Outfit&weight=700&size=32&duration=3500&pause=1000&color=FF6B6B&center=true&vCenter=true&width=900&height=70&lines=Deep+Learning+Traffic+Predictions+🚦;60-Min+History+→+30-Min+Forecast;ST-GCN+Neural+Network+%7C+207+Sensor+Nodes)](https://git.io/typing-svg)
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
