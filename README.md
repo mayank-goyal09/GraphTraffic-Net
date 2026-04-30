@@ -1,4 +1,4 @@
-# 🚦 Traffic-GNN-Forecaster
+# 🚦 Traffic-GNN-Forecaster 🚦
 
 This project leverages a Spatio-Temporal Graph Convolutional Network (ST-GCN) to forecast real-time traffic speeds using deep learning. It operates on the standard **METR-LA** dataset.
 
