@@ -1,3 +1,12 @@
+---
+title: Gnn Traffic Forcaster
+emoji: 🌍
+colorFrom: indigo
+colorTo: red
+sdk: docker
+pinned: false
+---
+
 <div align="center">
 
 # 🚦 Nexus AI — Real-Time Traffic GNN Forecaster
@@ -210,9 +219,7 @@ To run the **full active pipeline** (Backend + Producer + Dashboard) on Hugging 
 
 ---
 
-
 ## 🎨 **DASHBOARD EXPERIENCE**
-
 
 ### 📸 **Visual Insights**
 
