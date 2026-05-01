@@ -10,6 +10,7 @@ import pandas as pd
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, '..'))
 sys.path.append(PROJECT_ROOT)
+from utils.data_utils import generate_synthetic_data
 
 # Configuration
 API_URL = "http://localhost:8000/ingest"
@@ -22,8 +23,8 @@ def mock_producer():
     Reads data from .h5 file row-by-row and sends it to the FastAPI backend.
     """
     if not os.path.exists(DATA_PATH):
-        print(f"[ERROR] Data file not found at {DATA_PATH}. Please generate it first.")
-        return
+        print(f"[INFO] Data file not found at {DATA_PATH}. Generating synthetic data...")
+        generate_synthetic_data(os.path.join(PROJECT_ROOT, 'data'))
 
     print(f"[INFO] Starting Mock Producer using {DATA_PATH}...")
     

@@ -15,7 +15,7 @@ PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, '..'))
 sys.path.append(PROJECT_ROOT)
 
 from models.st_gcn import TrafficForecaster
-from utils.data_utils import get_graph_structure
+from utils.data_utils import get_graph_structure, generate_synthetic_data
 
 app = FastAPI(title="Traffic Prediction API", description="Real-time ST-GCN Inference Backend")
 
@@ -62,6 +62,11 @@ class PredictionResponse(BaseModel):
 async def startup_event():
     global model, global_mean, global_std, edge_index, edge_weight
     
+    # 0. Ensure Data Exists (Auto-generate synthetic if missing)
+    if not os.path.exists(os.path.join(DATA_DIR, 'metr-la.h5')):
+        print("[INFO] metr-la.h5 not found. Generating synthetic data...")
+        generate_synthetic_data(DATA_DIR)
+    
     # 1. Load Data Stats for Normalization
     try:
         h5_path = os.path.join(DATA_DIR, 'metr-la.h5')
@@ -69,25 +74,25 @@ async def startup_event():
             data = f['df'][:]
             global_mean = float(data.mean())
             global_std = float(data.std())
-        print(f"[INFO] Loaded Data Stats: Mean={global_mean:.4f}, Std={global_std:.4f}")
+        print(f"📊 Loaded Data Stats: Mean={global_mean:.4f}, Std={global_std:.4f}")
     except Exception as e:
-        print(f"[WARN] Failed to load data stats: {e}. Using default.")
+        print(f"⚠️ Failed to load data stats: {e}. Using default.")
 
     # 2. Load Graph Structure
     try:
         edge_index, edge_weight = get_graph_structure(DATA_DIR)
         edge_index = edge_index.to(DEVICE)
         edge_weight = edge_weight.to(DEVICE)
-        print("[INFO] Graph structure loaded.")
+        print("🕸️ Graph structure loaded.")
     except Exception as e:
-        print(f"[ERROR] Failed to load graph structure: {e}")
+        print(f"❌ Failed to load graph structure: {e}")
         raise e
 
     # 3. Load Model
     try:
         model = TrafficForecaster(NUM_NODES, NUM_FEATURES, INPUT_TIMESTEPS, OUTPUT_TIMESTEPS)
         if not os.path.exists(MODEL_PATH):
-            print("[WARN] Model weights not found locally. Downloading from Google Drive...")
+            print("⚠️ Model weights not found locally. Downloading from Google Drive...")
             from utils.data_utils import download_from_drive
             download_from_drive("1K0JwT7E6sO2jb7rwyuGj1wmw4l6hBv8F", MODEL_PATH)
             
@@ -95,13 +100,13 @@ async def startup_event():
             model.load_state_dict(torch.load(MODEL_PATH, map_location=DEVICE))
             model.to(DEVICE)
             model.eval()
-            print(f"[INFO] Model loaded from {MODEL_PATH}")
+            print(f"🤖 Model loaded from {MODEL_PATH}")
         else:
-            print(f"[WARN] Model path {MODEL_PATH} not found or could not be downloaded. Running with initialized weights.")
+            print(f"⚠️ Model path {MODEL_PATH} not found or could not be downloaded. Running with initialized weights.")
             model.to(DEVICE)
             model.eval()
     except Exception as e:
-        print(f"[ERROR] Failed to load model: {e}")
+        print(f"❌ Failed to load model: {e}")
         raise e
 
 # --- Endpoints ---

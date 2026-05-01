@@ -8,3 +8,6 @@ __pycache__/
 
 # User testing outputs
 # Removed from ignore to include in README
+
+data/metr-la.h5
+data/sensor_graph/adj_mx.pkl
