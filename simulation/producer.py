@@ -22,17 +22,17 @@ def mock_producer():
     Reads data from .h5 file row-by-row and sends it to the FastAPI backend.
     """
     if not os.path.exists(DATA_PATH):
-        print(f"❌ Data file not found at {DATA_PATH}. Please generate it first.")
+        print(f"[ERROR] Data file not found at {DATA_PATH}. Please generate it first.")
         return
 
-    print(f"🚀 Starting Mock Producer using {DATA_PATH}...")
+    print(f"[INFO] Starting Mock Producer using {DATA_PATH}...")
     
     with h5py.File(DATA_PATH, 'r') as f:
         # Assuming the dataset key is 'df' based on data_utils.py
         data = f['df'][:]
         
     total_steps = len(data)
-    print(f"📊 Total time steps available: {total_steps}")
+    print(f"[INFO] Total time steps available: {total_steps}")
     
     for i in range(total_steps):
         # Extract current time step data (207 sensors)
@@ -47,13 +47,13 @@ def mock_producer():
         try:
             response = requests.post(API_URL, json=payload)
             if response.status_code == 200:
-                print(f"✅ Sent time step {i}/{total_steps}")
+                print(f"[INFO] Sent time step {i}/{total_steps}")
             else:
-                print(f"⚠️ Failed to send time step {i}: {response.text}")
+                print(f"[WARN] Failed to send time step {i}: {response.text}")
         except requests.exceptions.ConnectionError:
-            print("❌ Connection error. Is the backend running?")
+            print("[ERROR] Connection error. Is the backend running?")
         except Exception as e:
-            print(f"❌ Error: {e}")
+            print(f"[ERROR] Error: {e}")
             
         time.sleep(SIMULATION_DELAY)
 
