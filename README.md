@@ -13,6 +13,14 @@ pinned: false
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Outfit&weight=700&size=32&duration=3500&pause=1000&color=FF6B6B&center=true&vCenter=true&width=900&height=70&lines=Deep+Learning+Traffic+Predictions+🚦;60-Min+History+→+30-Min+Forecast;ST-GCN+Neural+Network+%7C+207+Sensor+Nodes)](https://git.io/typing-svg)
 
+<div align="center">
+  <a href="https://huggingface.co/spaces/mayankg09/gnn_traffic_forcaster" target="_blank">
+    <img src="https://img.shields.io/badge/🚀_Live_Demo-Hugging_Face_Space-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" height="40">
+  </a>
+</div>
+
+<br/>
+
 ![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi&logoColor=white)
@@ -34,6 +42,16 @@ pinned: false
 
 ### **From IoT Sensor Streams → High-Precision 30-Minute Traffic Forecasts** 🏙️
 
+</div>
+
+---
+
+## 🌐 **LIVE PREVIEW**
+
+Experience the **Nexus Traffic Forecaster** in action. The live application is hosted on Hugging Face Spaces with a dedicated domain presence:
+
+<div align="center">
+  <h3>🚀 <b><a href="https://huggingface.co/spaces/mayankg09/gnn_traffic_forcaster">gnn-traffic-forcaster.hf.space</a></b></h3>
 </div>
 
 ---
