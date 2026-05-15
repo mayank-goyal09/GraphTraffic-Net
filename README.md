@@ -56,7 +56,7 @@ Experience the **Nexus Traffic Forecaster** in action. The live application is h
 
 ---
 
-## ⚡ **THE SYSTEM AT A GLANCE**
+## ⚡ **THE SYSTEM AT A GLANCE** ⚡
 
 <table>
 <tr>
